@@ -33,7 +33,7 @@ public class MaintenanceTrackerTest
     @Test
     public void addAutomobile1()
     {
-        maintenanceTracker.addAutomobile("electric", electricCar.getMake(), electricCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, electricCar.getMake(), electricCar.getModel(),
                 electricCar.getYear(), electricCar.getColour(), electricCar.getOdometerReading(),
                 electricCar.getName(), electricCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileList().get(0);
@@ -53,7 +53,7 @@ public class MaintenanceTrackerTest
     @Test
     public void addAutomobile2()
     {
-        maintenanceTracker.addAutomobile("gas", gasCar.getMake(), gasCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.GAS_CAR, gasCar.getMake(), gasCar.getModel(),
                 gasCar.getYear(), gasCar.getColour(), gasCar.getOdometerReading(),
                 gasCar.getName(), gasCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileList().get(0);
@@ -73,7 +73,7 @@ public class MaintenanceTrackerTest
     @Test
     public void addAutomobile3()
     {
-        maintenanceTracker.addAutomobile("diesel", dieselCar.getMake(), dieselCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.DIESEL_CAR, dieselCar.getMake(), dieselCar.getModel(),
                 dieselCar.getYear(), dieselCar.getColour(), dieselCar.getOdometerReading(),
                 dieselCar.getName(), dieselCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileList().get(0);
@@ -129,7 +129,7 @@ public class MaintenanceTrackerTest
     {
         try
         {
-            maintenanceTracker.addAutomobile("electric", "", null, 1950, "", 0, null, null);
+            maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, "", null, 1950, "", 0, null, null);
             fail();
         }
         catch (IllegalArgumentException e)
@@ -144,7 +144,7 @@ public class MaintenanceTrackerTest
     @Test
     public void getAutomobileById1()
     {
-        maintenanceTracker.addAutomobile("electric", electricCar.getMake(), electricCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, electricCar.getMake(), electricCar.getModel(),
                 electricCar.getYear(), electricCar.getColour(), electricCar.getOdometerReading(),
                 electricCar.getName(), electricCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileList().get(0);
@@ -165,7 +165,7 @@ public class MaintenanceTrackerTest
     @Test
     public void getAutomobileById2()
     {
-        maintenanceTracker.addAutomobile("electric", electricCar.getMake(), electricCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, electricCar.getMake(), electricCar.getModel(),
                 electricCar.getYear(), electricCar.getColour(), electricCar.getOdometerReading(),
                 electricCar.getName(), electricCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileById("wrong");
@@ -178,7 +178,7 @@ public class MaintenanceTrackerTest
     @Test
     public void removeAutomobileById1()
     {
-        maintenanceTracker.addAutomobile("electric", electricCar.getMake(), electricCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, electricCar.getMake(), electricCar.getModel(),
                 electricCar.getYear(), electricCar.getColour(), electricCar.getOdometerReading(),
                 electricCar.getName(), electricCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileList().get(0);
@@ -200,7 +200,7 @@ public class MaintenanceTrackerTest
     @Test
     public void removeAutomobileById2()
     {
-        maintenanceTracker.addAutomobile("electric", electricCar.getMake(), electricCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, electricCar.getMake(), electricCar.getModel(),
                 electricCar.getYear(), electricCar.getColour(), electricCar.getOdometerReading(),
                 electricCar.getName(), electricCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileById("wrong");
@@ -214,7 +214,7 @@ public class MaintenanceTrackerTest
     @Test
     public void updateAutomobile1()
     {
-        maintenanceTracker.addAutomobile("electric", electricCar.getMake(), electricCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, electricCar.getMake(), electricCar.getModel(),
                 electricCar.getYear(), electricCar.getColour(), electricCar.getOdometerReading(),
                 electricCar.getName(), electricCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileList().get(0);
@@ -236,7 +236,7 @@ public class MaintenanceTrackerTest
     @Test
     public void updateAutomobile2()
     {
-        maintenanceTracker.addAutomobile("electric", electricCar.getMake(), electricCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, electricCar.getMake(), electricCar.getModel(),
                 electricCar.getYear(), electricCar.getColour(), electricCar.getOdometerReading(),
                 electricCar.getName(), electricCar.getOwner());
         Automobile a = maintenanceTracker.updateAutomobile("wrong", dieselCar.getMake(), dieselCar.getModel(),
@@ -251,7 +251,7 @@ public class MaintenanceTrackerTest
     @Test
     public void getMaintenanceItemById1()
     {
-        maintenanceTracker.addAutomobile("electric", electricCar.getMake(), electricCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, electricCar.getMake(), electricCar.getModel(),
                 electricCar.getYear(), electricCar.getColour(), electricCar.getOdometerReading(),
                 electricCar.getName(), electricCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileList().get(0);
@@ -267,7 +267,7 @@ public class MaintenanceTrackerTest
     @Test
     public void getMaintenanceItemById2()
     {
-        maintenanceTracker.addAutomobile("electric", electricCar.getMake(), electricCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, electricCar.getMake(), electricCar.getModel(),
                 electricCar.getYear(), electricCar.getColour(), electricCar.getOdometerReading(),
                 electricCar.getName(), electricCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileList().get(0);
@@ -283,7 +283,7 @@ public class MaintenanceTrackerTest
     @Test
     public void removeMaintenanceItemById1()
     {
-        maintenanceTracker.addAutomobile("electric", electricCar.getMake(), electricCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, electricCar.getMake(), electricCar.getModel(),
                 electricCar.getYear(), electricCar.getColour(), electricCar.getOdometerReading(),
                 electricCar.getName(), electricCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileList().get(0);
@@ -300,7 +300,7 @@ public class MaintenanceTrackerTest
     @Test
     public void removeMaintenanceItemById2()
     {
-        maintenanceTracker.addAutomobile("electric", electricCar.getMake(), electricCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, electricCar.getMake(), electricCar.getModel(),
                 electricCar.getYear(), electricCar.getColour(), electricCar.getOdometerReading(),
                 electricCar.getName(), electricCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileList().get(0);
@@ -313,7 +313,7 @@ public class MaintenanceTrackerTest
     @Test
     public void addOilChange1()
     {
-        maintenanceTracker.addAutomobile("gas", gasCar.getMake(), gasCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.GAS_CAR, gasCar.getMake(), gasCar.getModel(),
                 gasCar.getYear(), gasCar.getColour(), gasCar.getOdometerReading(),
                 gasCar.getName(), gasCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileList().get(0);
@@ -330,7 +330,7 @@ public class MaintenanceTrackerTest
     @Test
     public void addOilChange2()
     {
-        maintenanceTracker.addAutomobile("electric", electricCar.getMake(), electricCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, electricCar.getMake(), electricCar.getModel(),
                 electricCar.getYear(), electricCar.getColour(), electricCar.getOdometerReading(),
                 electricCar.getName(), electricCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileList().get(0);
@@ -352,7 +352,7 @@ public class MaintenanceTrackerTest
     @Test
     public void addTireRotation()
     {
-        maintenanceTracker.addAutomobile("electric", electricCar.getMake(), electricCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, electricCar.getMake(), electricCar.getModel(),
                 electricCar.getYear(), electricCar.getColour(), electricCar.getOdometerReading(),
                 electricCar.getName(), electricCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileList().get(0);
@@ -369,7 +369,7 @@ public class MaintenanceTrackerTest
     @Test
     public void addWaxVehicle()
     {
-        maintenanceTracker.addAutomobile("electric", electricCar.getMake(), electricCar.getModel(),
+        maintenanceTracker.addAutomobile(Automobile.ELECTRIC_CAR, electricCar.getMake(), electricCar.getModel(),
                 electricCar.getYear(), electricCar.getColour(), electricCar.getOdometerReading(),
                 electricCar.getName(), electricCar.getOwner());
         Automobile a = maintenanceTracker.getAutomobileList().get(0);
