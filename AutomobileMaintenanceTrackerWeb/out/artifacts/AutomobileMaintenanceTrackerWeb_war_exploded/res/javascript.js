@@ -107,6 +107,7 @@ function deleteAutomobile(vehicleId) {
         data: form,
         complete: function (data) {
             loadAddVehicleElement();
+            loadVehicles();
         }
     });
 }

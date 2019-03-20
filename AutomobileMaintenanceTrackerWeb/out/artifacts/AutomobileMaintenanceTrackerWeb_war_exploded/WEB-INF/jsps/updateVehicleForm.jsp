@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="row cardHeader">
-    <h4>Add Automobile</h4>
+    <h4>Update Automobile</h4>
 </div>
 <div class="row">
     <form method="post" id="updateVehicleForm" onsubmit="event.preventDefault();" >
@@ -49,4 +49,53 @@
             </tr>
         </table>
     </form>
+</div>
+<div class="row cardHeader">
+    <h4>Maintenance Items</h4>
+</div>
+<div class="row">
+    <table>
+        <tr class="d-flex">
+            <th class="col-12" colspan="2">Add maintenance item</th>
+        </tr>
+        <tr class="d-flex">
+            <td class="col-6">Type:</td>
+            <td class="col-6">
+                <select name="maintenanceType" id="maintenanceType">
+                    <c:if test="${vehicle.type ne 'electric'}">
+                        <option value="Oil Change">Oil Change</option>
+                    </c:if>
+                    <option value="Tire Rotation">Tire Rotation</option>
+                    <option value="Wax Vehicle">Wax Vehicle</option>
+                </select>
+            </td>
+        </tr>
+        <tr class="d-flex">
+            <td class="col-6">Date:</td>
+            <td class="col-6">
+                <input value="2019-01-01" type="date" name="maintenanceDate" id="maintenanceDate">
+            </td>
+        </tr>
+        <tr class="d-flex">
+            <td class="col-12" colspan="2">
+                <button type="button" onclick="addMaintenanceItem('${vehicle.id}');">Add item</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="row">
+    <table>
+        <tr class="d-flex">
+            <th class="col-4">Maintenance Type</th>
+            <th class="col-4">Maintenance Date</th>
+            <th class="col-4">Delete</th>
+        </tr>
+        <c:forEach items="${maintenanceItems}" var="item">
+            <tr class="d-flex">
+                <td class="col-4"><c:out value="${item.type}"/></td>
+                <td class="col-4"><c:out value="${item.date}"/></td>
+                <td class="col-4"><button type="button" onclick="deleteMaintenanceItem('${item.id}', '${vehicle.id}')">Delete</button></td>
+            </tr>
+        </c:forEach>
+    </table>
 </div>
